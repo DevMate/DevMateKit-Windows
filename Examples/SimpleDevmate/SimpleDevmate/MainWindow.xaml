@@ -1,0 +1,113 @@
+﻿<Window x:Class="SimpleDevmate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:SimpleDevmate"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        MinWidth="400"
+        MinHeight="350"
+        SizeToContent="WidthAndHeight"
+        mc:Ignorable="d">
+    <Grid>
+        <TabControl>
+            <TabControl.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="5" />
+                    <Setter Property="MinWidth" Value="129" />
+                    <Setter Property="Height" Value="29" />
+                </Style>
+            </TabControl.Resources>
+
+            <TabItem Header="FeedBack">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button x:Name="FeedBackBtn"
+                            Click="FeedBackBtn_OnClick"
+                            Content="FeedBack" />
+                    <Button x:Name="BugReportBtn"
+                            Click="BugReportBtn_OnClick"
+                            Content="Bug Report" />
+                    <Button x:Name="SupportRequestBtn"
+                            Click="SupportRequestBtn_OnClick"
+                            Content="SupportRequest" />
+                    <Button x:Name="CrashMeBtn"
+                            Click="CrashMeBtn_OnClick"
+                            Content="Crash Me Now!" />
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Activation">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+
+                        <Button x:Name="ActivationBtn"
+                                Click="ActivationBtn_OnClick"
+                                Content="Activation" />
+                        <Button x:Name="GetActivationInfoBtn"
+                                Click="GetActivationInfoBtn_OnClick"
+                                Content="Get Activation Info" />
+
+                        <Button x:Name="InvalidateActivationBtn"
+                                Click="InvalidateActivationBtn_OnClick"
+                                Content="Invalidate Activation" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock x:Name="ActStatusTextBlock"
+                                   Grid.Row="0"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+
+                        <ListBox x:Name="InfosListBox"
+                                 Grid.Column="1"
+                                 Width="400"
+                                 Height="200"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+
+                        <Button x:Name="StartTrailBtn"
+                                Click="StartTrailBtn_OnClick"
+                                Content="Start Trial" />
+                        <Button x:Name="GetTrailBtn"
+                                Click="GetTrailBtn_OnClick"
+                                Content="Get Trial Info" />
+
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Update">
+                <StackPanel Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+
+                    <CheckBox x:Name="TestUpdatesCb"
+                              Margin="0,0,0,15"
+                              HorizontalAlignment="Center"
+                              Content="Test Updates" />
+                    <CheckBox x:Name="BetaUpdatesCb"
+                              Margin="0,0,0,15"
+                              HorizontalAlignment="Center"
+                              Content="Beta Updates" />
+
+                    <Button x:Name="CheckUpdateBtn"
+                            Click="CheckUpdateBtn_OnClick"
+                            Content="Check Update" />
+
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
